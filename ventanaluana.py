@@ -38,7 +38,7 @@ def mostrarMenu():
      boton_volver = tk.Button(ventana, text="Volver", font=("Arial", 12), command=mostrarMenu)
      boton_volver.pack(pady=10)
  
- def mostrarOpcion2():
+ def mostrarbotongraficar():
      limpiarVentana()
      label = tk.Label(ventana, text="Elegiste la Opción 2", font=("Arial", 16))
      label.pack(pady=20)
