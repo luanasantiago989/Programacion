@@ -1,0 +1,78 @@
+
+# Paso 1: Descargar la imagen de internet
+def descargarFondo():
+    urlImagen = "https://github.com/rodripiersi/Imagenes/blob/main/Portada.png?raw=true"
+    datosImagen = urlopen(urlImagen)  # Descargar la imagen
+    imagenBinaria = datosImagen.read()  # Obtener los datos de la imagen
+    # Paso 2: Convertir los datos binarios en una imagen que podamos mostrar
+    imagen = Image.open(BytesIO(imagenBinaria))
+    return imagen
+
+#ESTO EN LA FUNCIÓN PRINCIPAL
+def main():
+    # Paso 3: Crear la ventana de la aplicación
+    ventana = tk.Tk()
+    ventana.title("Imagen en Tkinter")
+
+
+    # Obtener el tamaño de la pantalla
+    ancho = ventana.winfo_screenwidth()  # Obtengo el ancho del escritorio
+    alto = ventana.winfo_screenheight()  # Obtengo el alto del escritorio
+    ventana.geometry(f"{ancho}x{alto}")
+
+    imagen=descargarPortada()
+
+    # Paso 4: Redimensionar la imagen para que ocupe toda la pantalla
+    imagenRedimensionada = imagen.resize((ancho, alto), Image.Resampling.LANCZOS)
+
+    # Paso 5: Convertir la imagen a un formato que Tkinter entienda
+    imagenTk = ImageTk.PhotoImage(imagenRedimensionada)
+
+    # Paso 6: Crear un Label (etiqueta) en Tkinter para mostrar la imagen
+    etiqueta = tk.Label(ventana, image=imagenTk)
+    etiqueta.pack()  # Colocar la etiqueta en la ventana
+
+
+
+    # Paso 7: Mostrar la ventana
+    ventana.mainloop()  # Ejecutar la aplicación
+if __name__=="__main__":
+    main()
+
+ # Paso 1: Descargar la imagen de internet
+def descargarPortada():
+    urlImagen = "https://github.com/rodripiersi/Imagenes/blob/main/Portada.png?raw=true"
+    datosImagen = urlopen(urlImagen)  # Descargar la imagen
+    imagenBinaria = datosImagen.read()  # Obtener los datos de la imagen
+
+    # Paso 2: Convertir los datos binarios en una imagen que podamos mostrar
+    imagen = Image.open(BytesIO(imagenBinaria))
+    return imagen
+
+   #ESTO EN LA FUNCIÓN PRINCIPAL
+    def main():
+ # Paso 3: Crear la ventana de la aplicación
+    ventana = tk.Tk()
+    ventana.title("Imagen en Tkinter")
+
+# Obtener el tamaño de la pantalla
+    ancho = ventana.winfo_screenwidth()  # Obtengo el ancho del escritorio
+    alto = ventana.winfo_screenheight()  # Obtengo el alto del escritorio
+    ventana.geometry(f"{ancho}x{alto}")
+  imagen=descargarFondo()
+
+    # Paso 4: Redimensionar la imagen para que ocupe toda la pantalla
+    imagenRedimensionada = imagen.resize((ancho, alto), Image.Resampling.LANCZOS)
+
+    # Paso 5: Convertir la imagen a un formato que Tkinter entienda
+    imagenTk = ImageTk.PhotoImage(imagenRedimensionada)
+
+    # Paso 6: Crear un Label (etiqueta) en Tkinter para mostrar la imagen
+    etiqueta = tk.Label(ventana, image=imagenTk)
+    etiqueta.pack()  # Colocar la etiqueta en la ventana
+     # Paso 7: Mostrar la ventana
+    ventana.mainloop()  # Ejecutar la aplicación
+
+    if __name__=="__main__":
+    main()
+    
